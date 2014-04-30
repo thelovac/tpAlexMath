@@ -2,19 +2,19 @@
 template <class TYPE>
 Iterator<TYPE>::Iterator(void)
 {
+	current=NULL;
 }
 
 template <class TYPE>
 void Iterator<TYPE>::Next(void)
 {
-	this->current = current->Next;
-
+	current = current->Next;
 }
 
 template <class TYPE>
 void Iterator<TYPE>::Previous(void)
 {
-	this->current = current->Previous;
+	current = current->Previous;
 }
 
 template <class TYPE>
