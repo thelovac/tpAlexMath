@@ -1,6 +1,9 @@
-﻿La génération a démarré 2014-05-06 15:15:33.
+﻿La génération a démarré 2014-05-13 14:26:57.
      1>Projet "C:\Users\Alexandre\Desktop\École\Session 2\Algorithmique et programmation\Exercices\TP3\TP3_Remise2_V2012\MastermindLibs\Mastermind\Mastermind.vcxproj" sur le nœud 2 (Build cible(s)).
-     1>Lib:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\ArrayI /I..\List /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Mastermind.cpp
+         Mastermind.cpp
+       Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Alexandre\Desktop\École\Session 2\Algorithmique et programmation\Exercices\TP3\TP3_Remise2_V2012\MastermindLibs\Release\Mastermind.lib" /NOLOGO /LTCG Release\Mastermind.obj
          Release\MasterMindColor.obj
          Release\RandomNumber.obj
@@ -9,4 +12,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.14
+Temps écoulé 00:00:00.77

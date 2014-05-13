@@ -17,6 +17,9 @@ Mastermind::Mastermind()
 					tabSequences[iterateur]->SetElement(j, 2);
 					tabSequences[iterateur]->SetElement(k, 3);
 					tabSequences[iterateur]->SetElement(l, 4);
+
+					list->PushBack(tabSequences[iterateur]);
+
 					iterateur++;
 				}
 			}
@@ -30,31 +33,52 @@ Mastermind::~Mastermind()
 
 int Mastermind::GetNbElements() const
 {
-    return 1;
+	Iterator<ArrayI<Color>>* iterateur = new Iterator<ArrayI<Color>>;
+	iterateur->SetCurrent(list->Begin());
+	int nbElements;
+
+	while(iterateur->GetCurrent() != NULL)
+	{
+		nbElements++;
+	}
+
+    return nbElements;
 }
 
 
 ArrayI<Color>* Mastermind::GetElement() const
 {
     //Utiliser la classe RandomNumber pour ne pas offrir toujours le premier élément de la liste (les parties seraient toutes pareilles avec la même séquence cachée)
-    ArrayI<Color>* PourCompiler;
 
-	RandomNumber* rdm = new RandomNumber();
-	rdm->GetNumber(list->GetNbElements());
+	Iterator<ArrayI<Color>>* iterateur = new Iterator<ArrayI<Color>>;
+	iterateur->SetCurrent(list->Begin());
 
-	PourCompiler->operator=(tabSequences[*rdm]);
+	RandomNumber rdm;
 
-    return PourCompiler;
+	int color = rdm.GetNumber(list->GetNbElements());
+
+	for(int i = 1; i < color; i++);
+	{
+		iterateur->Next();
+	}
+
+	return iterateur->GetCurrentElement();
 }
 
 short Mastermind::CleanList(Color* _tabColorRef, short* _tabVerdicts)
 {
+	for(int j = 1; j < list->GetNbElements(); j++)
+	{
 
-     /*switch(tabVerdicts[i]){
+		for(int i = 0; i < 4; i++)
+		{
+			switch(_tabVerdicts[i])
+			{
                 
                 case 1: //Bonne couleur, bonne place
 
                         //Si la séquence de couleurs traitée n'a pas la couleur à la bonne place, il faut la retirer de la liste.
+
 
                 case 2: //Bonne couleur, mauvaise place
 
@@ -63,6 +87,8 @@ short Mastermind::CleanList(Color* _tabColorRef, short* _tabVerdicts)
            
                 case 3: //Mauvaise couleur
                         //Si la séquence de couleurs traitée a la couleur, il faut la retirer de la liste.
-    };*/
+			};
+		}
+	}
     return 1; //Pour Compiler
 }
